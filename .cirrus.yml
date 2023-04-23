@@ -7,7 +7,7 @@ env:
 task:
   name: Build_XD
   container:
-    image: cirrusci/flutter:stable-3.7.x
+    image: cirrusci/flutter:3.7.7
     cpu: 8
     memory: 32G
   working_directory: ~/project
