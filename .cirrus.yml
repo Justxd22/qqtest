@@ -4,7 +4,7 @@ env:
     KEY_PASS: test@cake_wallet
 
 
-build:
+task:
   name: Build_XD
   container:
     image: cirrusci/flutter:stable-3.7.x
