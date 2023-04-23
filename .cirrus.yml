@@ -14,7 +14,7 @@ task:
 
   installdep_script:
     - sudo apt-get update
-    - sudo apt-get install -y curl unzip automake build-essential file pkg-config git python3 libtool libtinfo5 cmake clang
+    - sudo apt-get install -y curl unzip automake build-essential file pkg-config git python3 libtool libtinfo5 cmake clang python-is-python3
 
   SetupFlutter_script:
     - export PATH="$PATH:/root/.pub-cache/bin"
