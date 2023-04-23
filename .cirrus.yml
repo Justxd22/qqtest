@@ -22,7 +22,6 @@ task:
 
   InitBuild_script:
     - sudo mkdir -p /opt/android
-    - sudo chown $USER /opt/android
     - cd /opt/android
     - git clone https://github.com/Justxd22/qqtest.git --branch main
     - mv qqtest/ cake_wallet/
