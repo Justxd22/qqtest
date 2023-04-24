@@ -41,7 +41,6 @@ task:
       - cw_monero/ios/External
       - cw_shared_external/ios/External
     reupload_on_changes: false
-    fingerprint_script: ${{ hashFiles('**/build_monero.sh', '**/build_haven.sh') }}    
     populate_script: 
       - pwd
       - ls -lah ./
