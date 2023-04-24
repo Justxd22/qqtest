@@ -30,7 +30,7 @@ task:
     - source ./app_env.sh cakewallet
     - ./app_config.sh
 
-  BuildExternals_cache:
+  BuildExternal_cache:
     folders:
       - /opt/android/cake_wallet/cw_haven/android/.cxx
       - /opt/android/cake_wallet/cw_haven/ios/External
