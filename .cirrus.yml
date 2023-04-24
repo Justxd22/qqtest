@@ -10,7 +10,6 @@ task:
     image: cirrusci/flutter:3.7.7
     cpu: 5
     memory: 16G
-  working_directory: /
 
   installdep_script:
     - sudo apt-get update
@@ -47,7 +46,7 @@ task:
     - cp -r cw_monero/ios/External /tmp/cirrus-ci-build/cache/
     - cp -r cw_shared_external/ios/External /tmp/cirrus-ci-build/cache/
     
-   BuildExternal_cache:
+  BuildExternal_cache:
     folders:
       - cache
     reupload_on_changes: false
