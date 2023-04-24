@@ -35,11 +35,11 @@ task:
 
   BuildExternal_cache:
     folders:
-      - ../opt/android/cake_wallet/cw_haven/android/.cxx
-      - ../opt/android/cake_wallet/cw_haven/ios/External
-      - ../opt/android/cake_wallet/cw_monero/android/.cxx
-      - ../opt/android/cake_wallet/cw_monero/ios/External
-      - ../opt/android/cake_wallet/cw_shared_external/ios/External
+      - ../../cw_haven/android/.cxx
+      - ../../cw_haven/ios/External
+      - ../../cw_monero/android/.cxx
+      - ../../cw_monero/ios/External
+      - ../../cw_shared_external/ios/External
   
   BuildExternals_script:
     - cd /opt/android/cake_wallet/scripts/android/
