@@ -109,7 +109,6 @@ jobs:
       - name: Rename-script
         run: echo -e "id=com.cakewallet.test\nname=$GITHUB_HEAD_REF" > /opt/android/cake_wallet/android/app.properties
         
-        
       - name: Build_script
         run: |
           cd /opt/android/cake_wallet
