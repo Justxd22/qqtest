@@ -39,12 +39,13 @@ task:
     - ./build_all.sh
     - ./copy_monero_deps.sh
     - cd /opt/android/cake_wallet/
+    - ls -lah ./*/*
+    - ls -lah ./cw_haven/android/*
+    - ls -lah ./haven/*/*
     - mkdir /tmp/cirrus-ci-build/cache/
-    - cp -r cw_haven/android/.cxx /tmp/cirrus-ci-build/cache/
-    - cp -r cw_haven/ios/External /tmp/cirrus-ci-build/cache/
-    - cp -r cw_monero/android/.cxx /tmp/cirrus-ci-build/cache/
-    - cp -r cw_monero/ios/External /tmp/cirrus-ci-build/cache/
-    - cp -r cw_shared_external/ios/External /tmp/cirrus-ci-build/cache/
+    - cp -r cw_haven/ /tmp/cirrus-ci-build/cache/
+    - cp -r cw_monero/ /tmp/cirrus-ci-build/cache/
+    - cp -r cw_shared_external/ /tmp/cirrus-ci-build/cache/
     
   BuildExternal_cache:
     folders:
