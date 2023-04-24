@@ -10,7 +10,7 @@ task:
     image: cirrusci/flutter:3.7.7
     cpu: 5
     memory: 16G
-  working_directory: ~/project
+  working_directory: /
 
   installdep_script:
     - sudo apt-get update
