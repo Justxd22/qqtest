@@ -41,7 +41,6 @@ task:
     - cd /opt/android/cake_wallet/
     - ls -lah ./*/*
     - ls -lah ./cw_haven/android/*
-    - ls -lah ./haven/*/*
     - mkdir /tmp/cirrus-ci-build/cache/
     - cp -r cw_haven/ /tmp/cirrus-ci-build/cache/
     - cp -r cw_monero/ /tmp/cirrus-ci-build/cache/
