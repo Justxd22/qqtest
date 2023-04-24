@@ -8,8 +8,8 @@ task:
   name: Build_XD
   container:
     image: cirrusci/flutter:3.7.7
-    cpu: 8
-    memory: 32G
+    cpu: 5
+    memory: 16G
   working_directory: ~/project
 
   installdep_script:
@@ -30,6 +30,14 @@ task:
     - source ./app_env.sh cakewallet
     - ./app_config.sh
 
+  BuildExternals_cache:
+    folders:
+      - /opt/android/cake_wallet/cw_haven/android/.cxx
+      - /opt/android/cake_wallet/cw_haven/ios/External
+      - /opt/android/cake_wallet/cw_monero/android/.cxx
+      - /opt/android/cake_wallet/cw_monero/ios/External
+      - /opt/android/cake_wallet/cw_shared_external/ios/External
+  
   BuildExternals_script:
     - cd /opt/android/cake_wallet/scripts/android/
     - source ./app_env.sh cakewallet
@@ -44,9 +52,10 @@ task:
     - cd /opt/android/cake_wallet
     - flutter packages pub run tool/generate_android_key_properties.dart keyAlias=testKey storeFile=key.jks storePassword=$STORE_PASS keyPassword=$KEY_PASS
     - cd /opt/android/cake_wallet
-    - echo "################################################################ LOCALIZATION TTTEEESSSTTT #######################################################"
+    - ls -lah lib/
+    - echo "#LOCALIZATIONTTTEEESSSTTT#"
     - flutter packages pub run tool/generate_localization.dart
-    - echo "################################################################ LOCALIZATION TTTEEESSSTTT END #######################################################"
+    - ls -lah lib/generated/*
     - cd /opt/android/cake_wallet
     - cd cw_core && flutter pub get && flutter packages pub run build_runner build --delete-conflicting-outputs && cd ..
     - cd cw_monero && flutter pub get && flutter packages pub run build_runner build --delete-conflicting-outputs && cd ..
