@@ -34,19 +34,15 @@ task:
     - ls -lah /
 
   BuildExternal_cache:
-    reupload_on_changes: false
-    fingerprint_script: ${{ hashFiles('**/build_monero.sh', '**/build_haven.sh') }}    
-    populate_script: 
-      - pwd
-      - ls -lah ./
-      - cd /opt/android/cake_wallet/
     folders:
       - cw_haven/android/.cxx
       - cw_haven/ios/External
       - cw_monero/android/.cxx
       - cw_monero/ios/External
       - cw_shared_external/ios/External
-     test_script: 
+    reupload_on_changes: false
+    fingerprint_script: ${{ hashFiles('**/build_monero.sh', '**/build_haven.sh') }}    
+    populate_script: 
       - pwd
       - ls -lah ./
       - cd /opt/android/cake_wallet/
