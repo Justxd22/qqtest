@@ -34,12 +34,20 @@ task:
     - ls -lah /
 
   BuildExternal_cache:
+    populate_script: 
+      - pwd
+      - ls -lah ./
+      - cd /opt/android/cake_wallet/
     folders:
-      - ../../cw_haven/android/.cxx
-      - ../../cw_haven/ios/External
-      - ../../cw_monero/android/.cxx
-      - ../../cw_monero/ios/External
-      - ../../cw_shared_external/ios/External
+      - cw_haven/android/.cxx
+      - cw_haven/ios/External
+      - cw_monero/android/.cxx
+      - cw_monero/ios/External
+      - cw_shared_external/ios/External
+     test_script: 
+      - pwd
+      - ls -lah ./
+      - cd /opt/android/cake_wallet/
   
   BuildExternals_script:
     - cd /opt/android/cake_wallet/scripts/android/
