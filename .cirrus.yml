@@ -34,6 +34,8 @@ task:
     - ls -lah /
 
   BuildExternal_cache:
+    reupload_on_changes: false
+    fingerprint_script: ${{ hashFiles('**/build_monero.sh', '**/build_haven.sh') }}    
     populate_script: 
       - pwd
       - ls -lah ./
