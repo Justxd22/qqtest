@@ -80,6 +80,7 @@ jobs:
           flutter packages pub run build_runner build --delete-conflicting-outputs
           cd /opt/android/cake_wallet
           touch lib/.secrets.g.dart
+          
           echo "const salt = '0000000000000000000000000000';" > lib/.secrets.g.dart
           echo "const keychainSalt = '0000000000000000000000000000';" >> lib/.secrets.g.dart
           echo "const key = '0000000000000000000000000000';" >> lib/.secrets.g.dart
@@ -88,6 +89,7 @@ jobs:
           echo "const backupSalt = '0000000000000000000000000000';" >> lib/.secrets.g.dart
           echo "const backupKeychainSalt = '0000000000000000000000000000';" >> lib/.secrets.g.dart
           echo "const changeNowApiKey = '0000000000000000000000000000';" >> lib/.secrets.g.dart
+          echo "const changeNowApiKeyDesktop = '0000000000000000000000000000';" >> lib/.secrets.g.dart
           echo "const wyreSecretKey = '0000000000000000000000000000';" >> lib/.secrets.g.dart
           echo "const wyreApiKey = '0000000000000000000000000000';" >> lib/.secrets.g.dart
           echo "const wyreAccountId = '0000000000000000000000000000';" >> lib/.secrets.g.dart
@@ -96,6 +98,7 @@ jobs:
           echo "const sideShiftAffiliateId = '0000000000000000000000000000';" >> lib/.secrets.g.dart
           echo "const sideShiftApiKey = '0000000000000000000000000000';" >> lib/.secrets.g.dart
           echo "const simpleSwapApiKey = '0000000000000000000000000000';" >> lib/.secrets.g.dart
+          echo "const simpleSwapApiKeyDesktop = '0000000000000000000000000000';" >> lib/.secrets.g.dart
           echo "const onramperApiKey = '0000000000000000000000000000';" >> lib/.secrets.g.dart
           echo "const anypayToken = '0000000000000000000000000000';" >> lib/.secrets.g.dart
           echo "const ioniaClientId = '0000000000000000000000000000';" >> lib/.secrets.g.dart
