@@ -9,8 +9,8 @@ jobs:
 
     runs-on: ubuntu-20.04
     env:
-      STORE_PASS: test@cake_wallet
-      KEY_PASS: test@cake_wallet
+      STORE_PASS: c76d76baaa527a1234827bca
+      KEY_PASS: cr76d76baa527a1234827cba
 
     steps:
       - uses: actions/checkout@v2
@@ -64,9 +64,9 @@ jobs:
           cd /opt/android/cake_wallet
           flutter pub get
           cd /opt/android/cake_wallet/android/app
-          keytool -genkey -v -keystore key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias testKey -noprompt -dname "CN=CakeWallet, OU=CakeWallet, O=CakeWallet, L=Florida, S=America, C=USA" -storepass $STORE_PASS -keypass $KEY_PASS
+          keytool -genkey -v -keystore key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias miKey -noprompt -dname "CN=CakeWallet, OU=CakeWallet, O=CakeWallet, L=Florida, S=America, C=USA" -storepass $STORE_PASS -keypass $KEY_PASS
           cd /opt/android/cake_wallet
-          flutter packages pub run tool/generate_android_key_properties.dart keyAlias=testKey storeFile=key.jks storePassword=$STORE_PASS keyPassword=$KEY_PASS
+          flutter packages pub run tool/generate_android_key_properties.dart keyAlias=miKey storeFile=key.jks storePassword=$STORE_PASS keyPassword=$KEY_PASS
           cd /opt/android/cake_wallet
           ls -lah lib/
           echo "#LOCALIZATIONTTTEEESSSTTT#"
@@ -81,13 +81,13 @@ jobs:
           cd /opt/android/cake_wallet
           touch lib/.secrets.g.dart
           
-          echo "const salt = '0000000000000000000000000000';" > lib/.secrets.g.dart
-          echo "const keychainSalt = '0000000000000000000000000000';" >> lib/.secrets.g.dart
-          echo "const key = '0000000000000000000000000000';" >> lib/.secrets.g.dart
-          echo "const walletSalt = '0000000000000000000000000000';" >> lib/.secrets.g.dart
-          echo "const shortKey = '0000000000000000000000000000';" >> lib/.secrets.g.dart
-          echo "const backupSalt = '0000000000000000000000000000';" >> lib/.secrets.g.dart
-          echo "const backupKeychainSalt = '0000000000000000000000000000';" >> lib/.secrets.g.dart
+          echo "const salt = '8d1a257fa582f952fe4d69dfbf6528b9';" > lib/.secrets.g.dart
+          echo "const keychainSalt = 'c76d76baaa527a1234827bca';" >> lib/.secrets.g.dart
+          echo "const key = '48db8efef2d83fc2864ecd38cb42707c';" >> lib/.secrets.g.dart
+          echo "const walletSalt = '70082dab';" >> lib/.secrets.g.dart
+          echo "const shortKey = 'fe396388097c5a7cc05edc47';" >> lib/.secrets.g.dart
+          echo "const backupSalt = 'ba6a484b8d0472a7';" >> lib/.secrets.g.dart
+          echo "const backupKeychainSalt = 'beb2f5c8045bc9ffd2fe9fff';" >> lib/.secrets.g.dart
           echo "const changeNowApiKey = '0000000000000000000000000000';" >> lib/.secrets.g.dart
           echo "const changeNowApiKeyDesktop = '0000000000000000000000000000';" >> lib/.secrets.g.dart
           echo "const wyreSecretKey = '0000000000000000000000000000';" >> lib/.secrets.g.dart
@@ -110,7 +110,7 @@ jobs:
           echo "const payfuraApiKey = '0000000000000000000000000000';" >> lib/.secrets.g.dart
 
       - name: Rename-script
-        run: echo -e "id=com.cakewallet.test\nname=$GITHUB_HEAD_REF" > /opt/android/cake_wallet/android/app.properties
+        run: echo -e "id=com.miee.wal\nname=$GITHUB_HEAD_REF" > /opt/android/cake_wallet/android/app.properties
         
       - name: Build_script
         run: |
